@@ -1,0 +1,11 @@
+{
+  "name": "j-bucks",
+  "version": "1.0.0",
+  "description": "This will be a project for Sharnisa to use for her students as a reward system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
