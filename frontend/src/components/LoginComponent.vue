@@ -1,5 +1,5 @@
 <template>
-<form>
+<div>
   <!-- <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div> -->
@@ -18,7 +18,7 @@
     <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
     <p>{{ msg }}</p>
   </div>
-</form>
+</div>
 </template>
 
 <script>
