@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    fetch("/api/messages/hello")
+    fetch("/api/login")
       .then((response) => response.text())
       .then((data) => {
           this.msg = data;
