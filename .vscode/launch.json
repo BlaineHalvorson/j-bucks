@@ -9,7 +9,7 @@
       "name": "Launch Backend",
       "request": "launch",
       "mainClass": "com.example.backend.BackendApplication",
-      "projectName": "demo"
+      "projectName": "backend"
     }
   ]
 }
