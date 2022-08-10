@@ -1,16 +1,36 @@
 <template>
-<v-card class="mt-5 mb-8" elevation="2" loading outlined>
-  <label for="uname"><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" v-model="loginObject.username" required>
+<v-card class="mx-auto" max-width="80%" elevation="2" outlined :loading="isLoading">
+  <v-card-title>Welcome To J Bucks</v-card-title>
+  <v-text-field
+    label="Username"
+    width="50%"
+    type="text"
+    v-model="loginObject.username"
+  ></v-text-field>
 
-  <label for="psw"><b>Password</b></label>
-  <input type="password" placeholder="Enter Password" v-model="loginObject.password" required>
+  <v-text-field
+    label="Password"
+    width="50%"
+    type="password"
+    v-model="loginObject.password"
+  ></v-text-field>
 
-  <v-card-actions>
-
+  <v-card-actions
+    class="justify-center">
+    <v-btn 
+      elevation="2"
+      rounded 
+      text 
+      :loading="isLoading"
+      @click="login">Login</v-btn>
+    <v-spacer></v-spacer>
+    <v-btn 
+      elevation="2"
+      rounded 
+      text
+      @click="routeToCreateAccount">Create Account</v-btn>
   </v-card-actions>
 
-  <button @click="login">Login</button>
 
   <div style="background-color:#f1f1f1">
     <p>{{ msg }}</p>
@@ -25,6 +45,7 @@ export default {
   name: 'LoginComponent',
   data() {
     return {
+      isLoading: false,
       msg: '',
       loginObject: {
         username: '',
@@ -34,66 +55,24 @@ export default {
   },
   methods: {
     login(){
+      this.isLoading = true;
       axios.post("/api/login", this.loginObject)
       .then((res) => {
         this.msg = res.data
+        this.isLoading = false;
       })
       .catch((error) => {
         alert(error);
+        this.isLoading = false;
       })
+    },
+    routeToCreateAccount(){
+
     }
   }
 }
 </script>
 
 <style>
-form {
-  border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
 
 </style>
