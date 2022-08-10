@@ -1,24 +1,21 @@
 <template>
-<div>
-  <!-- <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div> -->
+<v-card class="mt-5 mb-8" elevation="2" loading outlined>
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" v-model="loginObject.username" required>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" v-model="loginObject.username" required>
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" v-model="loginObject.password" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" v-model="loginObject.password" required>
+  <v-card-actions>
 
-    <button @click="login">Login</button>
-  </div>
+  </v-card-actions>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+  <button @click="login">Login</button>
+
+  <div style="background-color:#f1f1f1">
     <p>{{ msg }}</p>
   </div>
-</div>
+</v-card>
 </template>
 
 <script>
@@ -99,25 +96,4 @@ img.avatar {
   border-radius: 50%;
 }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
 </style>
