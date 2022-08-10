@@ -1,5 +1,6 @@
 <template>
 <v-card class="mx-auto" max-width="80%" elevation="2" outlined :loading="isLoading">
+
   <v-card-title>Welcome To J Bucks</v-card-title>
   <v-text-field
     label="Username"
@@ -26,9 +27,9 @@
     <v-spacer></v-spacer>
     <v-btn 
       elevation="2"
-      rounded 
-      text
-      @click="routeToCreateAccount">Create Account</v-btn>
+      to="/create-user"
+      rounded
+      >Create Account</v-btn>
   </v-card-actions>
 
 

@@ -1,5 +1,5 @@
 <template>
-  <h1>Create User Page</h1>
+  <h1>This is the about page</h1>
 </template>
 
 <script>
