@@ -1,5 +1,5 @@
 <template>
-  <h1>Create User Page</h1>
+  <h1>Unauthorized Access Page</h1>
 </template>
 
 <script>
